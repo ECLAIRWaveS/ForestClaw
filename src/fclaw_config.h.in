@@ -1,0 +1,155 @@
+/* C compiler */
+#ifndef FCLAW_CC
+#define FCLAW_CC @FCLAW_CC@
+#endif
+
+/* C compiler flags */
+#ifndef FCLAW_CFLAGS
+#define FCLAW_CFLAGS @FCLAW_CFLAGS@
+#endif
+
+/* C preprocessor */
+#ifndef FCLAW_CPP
+#define FCLAW_CPP @FCLAW_CPP@
+#endif
+
+/* C preprocessor flags */
+#ifndef FCLAW_CPPFLAGS
+#define FCLAW_CPPFLAGS @FCLAW_CPPFLAGS@
+#endif
+
+/* Nvidia C/C++ flags */
+#ifndef FCLAW_CUDA_CFLAGS
+#define FCLAW_CUDA_CFLAGS @FCLAW_CUDA_CFLAGS@
+#endif
+
+/* Nvidia LD flags */
+#ifndef FCLAW_CUDA_LDFLAGS
+#define FCLAW_CUDA_LDFLAGS @FCLAW_CUDA_LDFLAGS@
+#endif
+
+/* C++ compiler */
+#ifndef FCLAW_CXX
+#define FCLAW_CXX @FCLAW_CXX@
+#endif
+
+/* C++ compiler flags */
+#ifndef FCLAW_CXXFLAGS
+#define FCLAW_CXXFLAGS ""
+#endif
+
+/* Undefine if: use aligned malloc (optionally use --enable-memalign=<bytes>) */
+#cmakedefine01 FCLAW_ENABLE_MEMALIGN
+
+/* Define to 1 if we are using MPI */
+#cmakedefine01 FCLAW_ENABLE_MPI
+
+/* Define to 1 if we can use MPI_COMM_TYPE_SHARED */
+#cmakedefine01 FCLAW_ENABLE_MPICOMMSHARED
+
+/* Define to 1 if we are using MPI I/O */
+#cmakedefine01 FCLAW_ENABLE_MPIIO
+
+/* Define to 1 if we are using MPI_Init_thread */
+#cmakedefine01 FCLAW_ENABLE_MPITHREAD
+
+/* Define to 1 if we can use MPI_Win_allocate_shared */
+#cmakedefine01 FCLAW_ENABLE_MPIWINSHARED
+
+/* F77 compiler */
+#ifndef FCLAW_F77
+#define FCLAW_F77 @FCLAW_F77@
+#endif
+
+/* Define to a macro mangling the given C identifier (in lower and upper
+   case), which must not contain underscores, for linking with Fortran. */
+#ifndef FCLAW_F77_FUNC
+#define FCLAW_F77_FUNC(name,NAME) name ## _
+#endif
+
+/* As F77_FUNC, but for C identifiers containing underscores. */
+#ifndef FCLAW_F77_FUNC_
+#define FCLAW_F77_FUNC_(name,NAME) name ## _
+#endif
+
+/* Define to a macro mangling the given C identifier (in lower and upper
+   case), which must not contain underscores, for linking with Fortran. */
+#ifndef FCLAW_FC_FUNC
+#define FCLAW_FC_FUNC(name,NAME) name ## _
+#endif
+
+/* As FC_FUNC, but for C identifiers containing underscores. */
+#ifndef FCLAW_FC_FUNC_
+#define FCLAW_FC_FUNC_(name,NAME) name ## _
+#endif
+
+/* F77 compiler flags */
+#ifndef FCLAW_FFLAGS
+#define FCLAW_FFLAGS @FCLAW_FFLAGS@
+#endif
+
+/* Fortran libraries */
+#ifndef FCLAW_FLIBS
+#define FCLAW_FLIBS @FCLAW_FLIBS@
+#endif
+
+/* Define to 1 if you have the `aligned_alloc' function. */
+#cmakedefine01 FCLAW_HAVE_ALIGNED_ALLOC
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#cmakedefine01 FCLAW_HAVE_DLFCN_H
+
+/* Define to 1 if you have the `feenableexcept' function. */
+#cmakedefine01 FCLAW_HAVE_FEENABLEEXCEPT
+
+/* Define to 1 if you have the <fenv.h> header file. */
+#cmakedefine01 FCLAW_HAVE_FENV_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#cmakedefine01 FCLAW_HAVE_INTTYPES_H
+
+/* Linker flags */
+#ifndef FCLAW_LDFLAGS
+#define FCLAW_LDFLAGS @FCLAW_LDFLAGS@
+#endif
+
+/* Libraries */
+#ifndef FCLAW_LIBS
+#define FCLAW_LIBS @FCLAW_LIBS@
+#endif
+
+
+/* Name of package */
+#ifndef FCLAW_PACKAGE
+#define FCLAW_PACKAGE "forestclaw"
+#endif
+
+/* Define to the address where bug reports for this package should be sent. */
+#ifndef FCLAW_PACKAGE_BUGREPORT
+#define FCLAW_PACKAGE_BUGREPORT "burstedde@ins.uni-bonn.de"
+#endif
+
+/* Define to the full name of this package. */
+#ifndef FCLAW_PACKAGE_NAME
+#define FCLAW_PACKAGE_NAME "ForestClaw"
+#endif
+
+/* Define to the full name and version of this package. */
+#ifndef FCLAW_PACKAGE_STRING
+#define FCLAW_PACKAGE_STRING "ForestClaw 0.1.4880-4dae"
+#endif
+
+/* Define to the one symbol short name of this package. */
+#ifndef FCLAW_PACKAGE_TARNAME
+#define FCLAW_PACKAGE_TARNAME "forestclaw"
+#endif
+
+/* Define to the home page for this package. */
+#ifndef FCLAW_PACKAGE_URL
+#define FCLAW_PACKAGE_URL ""
+#endif
+
+/* Define to the version of this package. */
+#ifndef FCLAW_PACKAGE_VERSION
+#define FCLAW_PACKAGE_VERSION @FCLAW_PACKAGE_VERSION@
+#endif
