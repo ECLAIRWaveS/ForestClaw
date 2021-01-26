@@ -1,11 +1,9 @@
 include(ExternalProject)
 
 set(p4est_external true CACHE BOOL "build p4est library")
+set(p4est_ROOT ${PROJECT_BINARY_DIR}/p4est CACHE PATH "p4est root directory" FORCE)
 
-find_package(Git REQUIRED)
-execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive)
-
-set(p4est_ROOT ${PROJECT_BINARY_DIR}/p4est)
+find_package(Autotools REQUIRED)
 
 set(p4est_sc_LIBRARY ${p4est_ROOT}/lib/${CMAKE_STATIC_LIBRARY_PREFIX}sc${CMAKE_STATIC_LIBRARY_SUFFIX} CACHE FILEPATH "sc library" FORCE)
 set(p4est_LIBRARY ${p4est_ROOT}/lib/${CMAKE_STATIC_LIBRARY_PREFIX}p4est${CMAKE_STATIC_LIBRARY_SUFFIX} CACHE FILEPATH "p4est library" FORCE)
@@ -17,14 +15,11 @@ if(MPI_C_FOUND)
 endif()
 
 ExternalProject_Add(p4est
-# GIT_REPOSITORY https://github.com/cburstedde/p4est.git
-# GIT_TAG prev3-develop
-# # v2.2 requires BLAS and has problems detecting gfortran on MacOS
-SOURCE_DIR ${PROJECT_SOURCE_DIR}/p4est
-CONFIGURE_COMMAND ${PROJECT_SOURCE_DIR}/p4est/configure ${p4est_flags} ${p4est_mpi}
-BUILD_COMMAND make -j${Ncpu}
-INSTALL_COMMAND make -j${Ncpu} install
-TEST_COMMAND ""
+GIT_REPOSITORY https://github.com/cburstedde/p4est.git
+GIT_TAG 00da6a98a36c08833bb43eaf9d8f457ce587a3f2
+CONFIGURE_COMMAND ${PROJECT_BINARY_DIR}/p4est-prefix/src/p4est/configure ${p4est_flags} ${p4est_mpi}
+BUILD_COMMAND ${MAKE_EXECUTABLE} -j${Ncpu}
+INSTALL_COMMAND ${MAKE_EXECUTABLE} -j${Ncpu} install
 BUILD_BYPRODUCTS ${p4est_LIBRARY} ${p4est_sc_LIBRARY}
 )
 

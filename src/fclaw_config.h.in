@@ -1,3 +1,6 @@
+#ifndef _SRC_FCLAW_CONFIG_H
+#define _SRC_FCLAW_CONFIG_H 1
+
 /* C compiler */
 #ifndef FCLAW_CC
 #define FCLAW_CC @FCLAW_CC@
@@ -39,22 +42,34 @@
 #endif
 
 /* Undefine if: use aligned malloc (optionally use --enable-memalign=<bytes>) */
+#ifndef FCLAW_ENABLE_MEMALIGN
 #cmakedefine01 FCLAW_ENABLE_MEMALIGN
+#endif
 
 /* Define to 1 if we are using MPI */
+#ifndef FCLAW_ENABLE_MPI
 #cmakedefine01 FCLAW_ENABLE_MPI
+#endif
 
 /* Define to 1 if we can use MPI_COMM_TYPE_SHARED */
+#ifndef FCLAW_ENABLE_MPICOMMSHARED
 #cmakedefine01 FCLAW_ENABLE_MPICOMMSHARED
+#endif
 
 /* Define to 1 if we are using MPI I/O */
+#ifndef FCLAW_ENABLE_MPIIO
 #cmakedefine01 FCLAW_ENABLE_MPIIO
+#endif
 
 /* Define to 1 if we are using MPI_Init_thread */
+#ifndef FCLAW_ENABLE_MPITHREAD
 #cmakedefine01 FCLAW_ENABLE_MPITHREAD
+#endif
 
 /* Define to 1 if we can use MPI_Win_allocate_shared */
+#ifndef FCLAW_ENABLE_MPIWINSHARED
 #cmakedefine01 FCLAW_ENABLE_MPIWINSHARED
+#endif
 
 /* F77 compiler */
 #ifndef FCLAW_F77
@@ -94,19 +109,99 @@
 #endif
 
 /* Define to 1 if you have the `aligned_alloc' function. */
+#ifndef FCLAW_HAVE_ALIGNED_ALLOC
 #cmakedefine01 FCLAW_HAVE_ALIGNED_ALLOC
+#endif
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
+#ifndef FCLAW_HAVE_DLFCN_H
 #cmakedefine01 FCLAW_HAVE_DLFCN_H
+#endif
 
 /* Define to 1 if you have the `feenableexcept' function. */
+#ifndef FCLAW_HAVE_FEENABLEEXCEPT
 #cmakedefine01 FCLAW_HAVE_FEENABLEEXCEPT
+#endif
 
 /* Define to 1 if you have the <fenv.h> header file. */
+#ifndef FCLAW_HAVE_FENV_H
 #cmakedefine01 FCLAW_HAVE_FENV_H
+#endif
 
 /* Define to 1 if you have the <inttypes.h> header file. */
+#ifndef FCLAW_HAVE_INTTYPES_H
 #cmakedefine01 FCLAW_HAVE_INTTYPES_H
+#endif
+
+/* Have we found function pthread_create. */
+#ifndef HAVE_LPTHREAD
+#cmakedefine01 HAVE_LPTHREAD
+#endif
+
+/* Have we found function lua_createtable. */
+#ifndef HAVE_LUA
+#cmakedefine01 HAVE_LUA
+#endif
+
+/* Define to 1 if you have the <memory.h> header file. */
+#ifndef FCLAW_HAVE_MEMORY_H
+#cmakedefine01 FCLAW_HAVE_MEMORY_H
+#endif
+
+/* Have we found function omp_get_thread_num. */
+#ifndef HAVE_OPENMP
+#cmakedefine01 HAVE_OPENMP
+#endif
+
+/* Define to 1 if you have the `posix_memalign' function. */
+#ifndef FCLAW_HAVE_POSIX_MEMALIGN
+#cmakedefine01 FCLAW_HAVE_POSIX_MEMALIGN
+
+#endif
+/* Define to 1 if you have the <signal.h> header file. */
+#ifndef FCLAW_HAVE_SIGNAL_H
+#cmakedefine01 FCLAW_HAVE_SIGNAL_H
+#endif
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#ifndef FCLAW_HAVE_STDINT_H
+#cmakedefine01 FCLAW_HAVE_STDINT_H
+#endif
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#ifndef FCLAW_HAVE_STDLIB_H
+#cmakedefine01 FCLAW_HAVE_STDLIB_H
+#endif
+
+/* Define to 1 if you have the <strings.h> header file. */
+#ifndef FCLAW_HAVE_STRINGS_H
+#cmakedefine01 FCLAW_HAVE_STRINGS_H
+#endif
+
+/* Define to 1 if you have the <string.h> header file. */
+#ifndef FCLAW_HAVE_STRING_H
+#cmakedefine01 FCLAW_HAVE_STRING_H
+#endif
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#ifndef FCLAW_HAVE_SYS_STAT_H
+#cmakedefine01 FCLAW_HAVE_SYS_STAT_H
+#endif
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#ifndef FCLAW_HAVE_SYS_TYPES_H
+#cmakedefine01 FCLAW_HAVE_SYS_TYPES_H
+#endif
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#ifndef FCLAW_HAVE_UNISTD_H
+#cmakedefine01 FCLAW_HAVE_UNISTD_H
+#endif
+
+/* Have we found function adler32_combine. */
+#ifndef FCLAW_HAVE_ZLIB
+#cmakedefine01 FCLAW_HAVE_ZLIB
+#endif
 
 /* Linker flags */
 #ifndef FCLAW_LDFLAGS
@@ -152,4 +247,43 @@
 /* Define to the version of this package. */
 #ifndef FCLAW_PACKAGE_VERSION
 #define FCLAW_PACKAGE_VERSION @FCLAW_PACKAGE_VERSION@
+#endif
+
+/* The size of `void *', as computed by sizeof. */
+#ifndef FCLAW_SIZEOF_VOID_P
+#define FCLAW_SIZEOF_VOID_P @FCLAW_SIZEOF_VOID_P@
+#endif
+
+/* Define to 1 if you have the ANSI C header files. */
+#ifndef FCLAW_STDC_HEADERS
+#cmakedefine01 FCLAW_STDC_HEADERS
+#endif
+
+/* Version number of package */
+#ifndef FCLAW_VERSION
+#define FCLAW_VERSION @FCLAW_VERSION@
+#endif
+
+
+/* Define to 1 if BLAS is used */
+#ifndef FCLAW_WITH_BLAS
+#cmakedefine01 FCLAW_WITH_BLAS
+#endif
+
+/* Define to 1 if LAPACK is used */
+#ifndef FCLAW_WITH_LAPACK
+#cmakedefine01 FCLAW_WITH_LAPACK
+#endif
+
+/* path to installed package p4est (optional) */
+#ifndef WITH_P4EST
+#define WITH_P4EST @WITH_P4EST@
+#endif
+
+/* path to installed package sc (optional) */
+#ifndef WITH_SC
+#define WITH_SC @WITH_SC@
+#endif
+
+/* once: _SRC_FCLAW_CONFIG_H */
 #endif

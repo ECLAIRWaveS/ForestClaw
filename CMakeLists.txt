@@ -5,10 +5,15 @@ project(ForestCLAW
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/Modules)
 
+cmake_host_system_information(RESULT Ncpu QUERY NUMBER_OF_PHYSICAL_CORES)
+message(VERBOSE "CMake ${CMAKE_VERSION} using ${Ncpu} threads")
+
 include(cmake/compilers.cmake)
+include(cmake/options.cmake)
 
 find_package(MPI COMPONENTS C Fortran)
-find_package(LAPACK REQUIRED)
+find_package(LAPACK)
+find_package(BLAS)
 find_package(ZLIB REQUIRED)
 
 # --- p4est, sc
