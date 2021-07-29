@@ -1,11 +1,10 @@
 {
-  "version": 2,
+  "version": 3,
 
 "configurePresets": [
 {
   "name": "ci",
   "binaryDir": "${sourceDir}/build",
-  "generator": "Ninja",
   "cacheVariables": {
     "CMAKE_BUILD_TYPE": "Release",
     "CMAKE_CUDA_ARCHITECTURES": "72",
@@ -18,7 +17,6 @@
 {
   "name": "default",
   "binaryDir": "${sourceDir}/build",
-  "generator": "Ninja",
   "cacheVariables": {"CMAKE_BUILD_TYPE": "Release",
     "mpi": true,
     "openmp": true}
@@ -36,37 +34,10 @@
 },
 {
   "name": "intel", "inherits": "default",
-  "displayName": "Intel Classic compiler: Linux/MacOS",
-  "environment": {
-    "CC": "icc",
-    "CXX": "icpc",
-    "FC": "ifort",
-    "MPI_ROOT": "$env{I_MPI_ROOT}",
-    "LAPACK_ROOT": "$env{MKLROOT}"
-  }
-},
-{
-  "name": "intelwin", "inherits": "intel",
-  "displayName": "Intel Classic compiler: Windows",
-  "environment": {
-    "CC": "icl",
-    "CXX": "icl"
-  }
-},
-{
-  "name": "intelnext", "inherits": "intel",
-  "displayName": "Intel oneAPI LLVM: Linux/MacOS",
+  "displayName": "Intel oneAPI LLVM",
   "environment": {
     "CC": "icx",
-    "CXX": "icpx",
     "FC": "ifx"
-  }
-},
-{
-  "name": "intelnextwin", "inherits": "intelnext",
-  "displayName": "Intel oneAPI LLVM: Windows",
-  "environment": {
-    "CXX": "icx"
   }
 }
 ],
