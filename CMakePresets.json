@@ -63,6 +63,12 @@
     "noTestsAction": "error",
     "stopOnFailure": false
   }
+},
+{
+  "name": "ci", "inherits": "default",
+  "execution": {
+    "stopOnFailure": true
+  }
 }
 ]
 }
