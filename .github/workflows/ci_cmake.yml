@@ -36,7 +36,7 @@ jobs:
           ubuntu_packages: ""
         - name: "Serial With GeoClaw"
           configure_flags: "-Dgeoclaw=ON"
-          ubuntu_packages: ""
+          ubuntu_packages: "libnetcdff-dev"
         - name: "Serial With CudaClaw (CUDA 10.1)"
           configure_flags: "-Dcudaclaw=ON"
           ubuntu_packages: "nvidia-cuda-toolkit"
@@ -58,7 +58,7 @@ jobs:
           ubuntu_packages: "libopenmpi-dev openmpi-bin"
         - name: "MPI With GeoClaw"
           configure_flags: "-Dmpi=ON -Dgeoclaw=ON"
-          ubuntu_packages: "libopenmpi-dev openmpi-bin"
+          ubuntu_packages: "libopenmpi-dev openmpi-bin libnetcdff-dev"
         - name: "MPI With CudaClaw (CUDA 10.1)"
           configure_flags: "-Dmpi=ON -Dcudaclaw=ON"
           ubuntu_packages: "libopenmpi-dev openmpi-bin nvidia-cuda-toolkit"
@@ -135,7 +135,7 @@ jobs:
       name: Checkout source code
 
     - name: Install system dependencies
-      run: brew install open-mpi ninja fftw
+      run: brew install open-mpi ninja fftw netcdf
 
     - name: CMake configure
       run: cmake --preset mac -Dclawpack=on -Dgeoclaw=on -Dthunderegg=on
