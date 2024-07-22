@@ -128,9 +128,7 @@ jobs:
     name: CMake build on MacOS
     env:
       HOMEBREW_NO_INSTALL_CLEANUP: 1
-      CC: gcc-11
-      CXX: g++-11
-      FC: gfortran-11
+      FC: gfortran-14
 
     steps:
     - uses: actions/checkout@v4
