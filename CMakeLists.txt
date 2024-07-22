@@ -119,6 +119,8 @@ endif(FCLAW_ENABLE_CLAWPACK)
 # --- geoclaw
 if(FCLAW_ENABLE_GEOCLAW)
 
+  find_package(NetCDF COMPONENTS Fortran REQUIRED)
+
   add_subdirectory(src/solvers/fc2d_geoclaw)
 
 endif(FCLAW_ENABLE_GEOCLAW)

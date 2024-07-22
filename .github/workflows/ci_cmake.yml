@@ -135,7 +135,7 @@ jobs:
       name: Checkout source code
 
     - name: Install system dependencies
-      run: brew install open-mpi ninja fftw netcdf
+      run: brew install open-mpi ninja fftw netcdf-fortran
 
     - name: CMake configure
       run: cmake --preset mac -Dclawpack=on -Dgeoclaw=on -Dthunderegg=on

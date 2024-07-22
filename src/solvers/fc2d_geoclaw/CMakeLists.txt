@@ -53,6 +53,7 @@ add_library(geoclaw_f OBJECT
 
 target_link_Libraries(geoclaw_f PRIVATE
     clawpatch
+    NetCDF::NetCDF_Fortran
 )
 
 set_target_properties(geoclaw_f PROPERTIES Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/include)
